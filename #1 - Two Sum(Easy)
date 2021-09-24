@@ -1,0 +1,37 @@
+var twoSum = function(nums, target) {
+    
+    const numsHashMap = {};
+    
+    for(let p = 0; p < nums.length; p++) {    //O(n) time, O(1) space
+        
+        const currentMapVal = numsHashMap[nums[p]];   //O(1) space
+        
+        if(currentMapVal >= 0) {
+            return [currentMapVal, p];
+        } else {
+            const numToFind = target - nums[p];   //O(1) space
+            numsHashMap[numToFind] = p;   //O(n) space
+        }
+        
+    }
+    
+    return null;
+};
+// O(n) time, O(n) space
+
+
+
+
+
+// Original two-pointers brute force method
+// for(let i = 0; i < nums.length; i++) {   //O(n) time, O(1) space
+//         const diff = target - nums[i];   //O(1) space
+        
+//         for(let j = i + 1; j < nums.length; j++) {   //O(n) time, O(1) space
+//             if(nums[j] === diff) {
+//                 return [i, j];
+//             }
+//         }
+//     }
+//
+// O(n^2) time, O(1) space
