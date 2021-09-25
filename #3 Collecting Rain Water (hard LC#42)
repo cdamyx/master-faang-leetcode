@@ -1,0 +1,30 @@
+var trap = function(height) {
+  let total = 0;
+
+  for (let i = 0; i < height.length; i++) {
+    let maxL = 0;
+    let maxR = 0;
+    let leftI = i;
+    let rightI = i;
+
+  while(leftI >= 0) {
+    maxL = Math.max( maxL, height[leftI]);
+    leftI--;
+  };
+
+  while(rightI < height.length) {
+    maxR = Math.max( maxR, height[rightI]);
+    rightI++;
+  };
+
+  const currentWater = Math.min(maxL, maxR) - height[i];
+
+  if ( currentWater >= 0 ) {
+    total += currentWater;
+  };
+
+  };
+
+  return total;
+
+};
