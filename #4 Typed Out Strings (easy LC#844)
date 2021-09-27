@@ -9,11 +9,11 @@ var backspaceCompare = function(s, t) {
                 newArr.push(string[i]);
             }
         }
-      return newArr.toString();
+      return newArr.toString();  //can also do JSON.strigify(newArr). Since you can't compare arrays simply using the === below, have to convert to string
     }
     
-    let newS = calc(s);
-    let newT = calc(t);
+    let newS = calc(s);     //Time: O(a), Space: O(a)
+    let newT = calc(t);     //Space: O(b), Space: O(b)
     
     if(newS === newT) {
         return true;
@@ -22,3 +22,5 @@ var backspaceCompare = function(s, t) {
     }
     
 };
+
+// Time: O(a + b), Space: O(a + b)
