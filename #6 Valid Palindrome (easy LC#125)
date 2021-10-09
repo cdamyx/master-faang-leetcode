@@ -1,0 +1,25 @@
+function palindromeChecker(s) {
+  let left = 0, right = s.length -1;
+  
+  while(left < right){
+    if(s[left] !== s[right]){
+      return subPalindrome(s, left + 1, right) || subPalindrome(s, left, right + 1)
+    }
+    left++;
+    right--;
+  }
+  return true;
+};
+
+function subPalindrome(s, left, right){
+  while(left < right){
+    if(s[left] !== s[right]){
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+};
+
+// time O(n) space O(1)
