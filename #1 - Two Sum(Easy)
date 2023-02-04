@@ -24,7 +24,7 @@ var twoSum = function(nums, target) {
 
 
 
-// Original two-pointers brute force method
+// Original two-pointers brute force method - map out
 // for(let i = 0; i < nums.length; i++) {   //O(n) time, O(1) space
 //         const diff = target - nums[i];   //O(1) space
         
